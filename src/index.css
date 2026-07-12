@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Плавный скролл и скрытие стандартного скроллбара */
+html { 
+  scroll-behavior: smooth; 
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+::-webkit-scrollbar { 
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scrollbar-hide::-webkit-scrollbar { 
+  display: none; 
+}
+
+.scrollbar-hide { 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
