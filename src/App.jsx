@@ -129,31 +129,43 @@ export default function VdokhnovenieApp() {
   const dummyReviews = Array(8).fill(null);
 
   return (
-    <div className="min-h-screen bg-[#110814] text-zinc-300 font-sans selection:bg-[#B87FD9] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#040C1A] text-zinc-300 font-sans selection:bg-[#38BDF8] selection:text-white overflow-x-hidden">
       
-      {/* === ПРЕМИАЛЬНЫЙ ЛИЛОВЫЙ ФОН + СЕТКА === */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:32px_32px] z-0"></div>
-      <div className="fixed top-[-20%] right-[-10%] w-[60%] h-[60%] bg-[#B87FD9]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-      <div className="fixed bottom-[-10%] left-[-10%] w-[40%] h-[50%] bg-[#7A4099]/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+      {/* === ПРЕМИАЛЬНЫЙ АНИМИРОВАННЫЙ ГОЛУБОЙ ФОН + СЕТКА === */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:32px_32px] z-0"></div>
+      
+      {/* Плавающие переливающиеся сферы (ОПТИМИЗИРОВАННЫЕ БЕЗ BLUR) */}
+      <motion.div 
+        animate={{ scale: [1, 1.1, 1], x: [0, 40, 0], y: [0, -30, 0] }} 
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="fixed top-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.12) 0%, rgba(56,189,248,0) 70%)' }}
+      />
+      <motion.div 
+        animate={{ scale: [1, 1.2, 1], x: [0, -50, 0], y: [0, 50, 0] }} 
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="fixed bottom-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(2,132,199,0.12) 0%, rgba(2,132,199,0) 70%)' }}
+      />
 
       {/* === ХЕДЕР (Верхняя панель) === */}
-      <header className="fixed top-0 w-full z-40 bg-[#110814]/80 backdrop-blur-xl border-b border-[#3A1F45]/50">
+      <header className="fixed top-0 w-full z-40 bg-[#040C1A]/80 backdrop-blur-xl border-b border-[#1E3A5F]/50">
         <div className="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
           
           {/* Логотип */}
           <div className="flex items-center gap-3">
             <div className="text-xl md:text-2xl font-black text-white tracking-widest uppercase">
               Вдохновение
-              <div className="h-0.5 w-1/2 bg-[#B87FD9] mt-1 rounded-full"></div>
+              <div className="h-0.5 w-1/2 bg-[#38BDF8] mt-1 rounded-full"></div>
             </div>
           </div>
 
           {/* Навигация (Десктоп) */}
           <nav className="hidden lg:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-zinc-400">
-            <a href="#about" className="hover:text-[#B87FD9] transition-colors">О нас</a>
-            <a href="#assortment" className="hover:text-[#B87FD9] transition-colors">Ассортимент</a>
-            <a href="#reviews" className="hover:text-[#B87FD9] transition-colors">Отзывы</a>
-            <a href="#contacts" className="hover:text-[#B87FD9] transition-colors">Контакты</a>
+            <a href="#about" className="hover:text-[#38BDF8] transition-colors">О нас</a>
+            <a href="#assortment" className="hover:text-[#38BDF8] transition-colors">Ассортимент</a>
+            <a href="#reviews" className="hover:text-[#38BDF8] transition-colors">Отзывы</a>
+            <a href="#contacts" className="hover:text-[#38BDF8] transition-colors">Контакты</a>
           </nav>
 
           {/* Соцсети (Только Telegram и WhatsApp) */}
@@ -171,12 +183,12 @@ export default function VdokhnovenieApp() {
         {/* === БЛОК 1: О НАС (HERO) === */}
         <section id="about" className="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-3xl">
-            <div className="inline-block px-3 py-1 bg-[#B87FD9]/10 border border-[#B87FD9]/30 text-xs text-[#D9A8FF] font-mono mb-8 uppercase tracking-widest rounded-full">
+            <div className="inline-block px-3 py-1 bg-[#38BDF8]/10 border border-[#38BDF8]/30 text-xs text-[#BAE6FD] font-mono mb-8 uppercase tracking-widest rounded-full">
               Искусство вкуса
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight leading-[1.1] mb-8">
               Создаем атмосферу <br />
-              <span className="text-[#B87FD9]">вашего праздника</span>
+              <span className="text-[#38BDF8]">вашего праздника</span>
             </h1>
             <p className="text-lg text-zinc-400 leading-relaxed font-light">
               Мы - компания «Вдохновение». Занимаемся организацией мероприятий под ключ, премиальным кейтерингом и созданием эксклюзивных десертов. От классических тортов до фитнес-линейки и брутальных мясных шедевров. Если вы не нашли свой идеальный вкус — мы разработаем рецепт специально для вас.
@@ -192,7 +204,7 @@ export default function VdokhnovenieApp() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div>
                 <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">Ассортимент</h2>
-                <div className="h-1 w-20 bg-[#B87FD9]"></div>
+                <div className="h-1 w-20 bg-[#38BDF8]"></div>
               </div>
               
               {/* Табы */}
@@ -203,8 +215,8 @@ export default function VdokhnovenieApp() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`whitespace-nowrap px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all rounded-sm border ${
                       activeTab === tab.id 
-                        ? 'bg-[#B87FD9] border-[#B87FD9] text-black' 
-                        : 'bg-[#180E1C] border-[#3A1F45] text-zinc-400 hover:border-[#B87FD9]/50 hover:text-white'
+                        ? 'bg-[#38BDF8] border-[#38BDF8] text-black' 
+                        : 'bg-[#0A1526] border-[#1E3A5F] text-zinc-400 hover:border-[#38BDF8]/50 hover:text-white'
                     }`}
                   >
                     {tab.label}
@@ -214,13 +226,13 @@ export default function VdokhnovenieApp() {
             </div>
 
             {/* Сетка меню */}
-            <div className="bg-[#110A14] border border-[#3A1F45] p-6 md:p-12 rounded-xl shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#B87FD9]/5 blur-[80px] pointer-events-none"></div>
+            <div className="bg-[#07101E] border border-[#1E3A5F] p-6 md:p-12 rounded-xl shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#38BDF8]/5 blur-[80px] pointer-events-none"></div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 relative z-10">
                 {menuData[activeTab].map((section, idx) => (
                   <div key={idx} className="flex flex-col">
-                    <h3 className="text-xl font-bold text-white uppercase tracking-wider mb-6 pb-2 border-b-2 border-[#3A1F45]">
+                    <h3 className="text-xl font-bold text-white uppercase tracking-wider mb-6 pb-2 border-b-2 border-[#1E3A5F]">
                       {section.category}
                     </h3>
                     <div className="flex flex-col gap-4">
@@ -230,7 +242,7 @@ export default function VdokhnovenieApp() {
                             {item.name}
                           </div>
                           <div className="hidden sm:block flex-1 border-b border-dashed border-zinc-700/50 mx-2"></div>
-                          <div className="text-sm md:text-base font-medium text-[#D9A8FF] whitespace-nowrap">
+                          <div className="text-sm md:text-base font-medium text-[#BAE6FD] whitespace-nowrap">
                             {item.price}
                           </div>
                         </div>
@@ -242,7 +254,7 @@ export default function VdokhnovenieApp() {
 
               {/* Уведомление для дрожжевого теста и тортов */}
               {(activeTab === 'pastry' || activeTab === 'cakes') && (
-                <div className="mt-12 p-4 bg-[#B87FD9]/10 border border-[#B87FD9]/30 rounded-lg text-sm text-zinc-400 text-center font-light">
+                <div className="mt-12 p-4 bg-[#38BDF8]/10 border border-[#38BDF8]/30 rounded-lg text-sm text-zinc-400 text-center font-light">
                   {activeTab === 'pastry' 
                     ? "* Во всех изделиях, кроме каравая, дрожжевое тесто можно заменить на песочное или слоеное."
                     : "* Минимальный заказ для тортов от 1 кг, для пирожных от 6 шт. Заказ не менее чем за 5 дней."}
@@ -258,7 +270,7 @@ export default function VdokhnovenieApp() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp}>
             <div className="mb-12 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">Отзывы</h2>
-              <div className="h-1 w-20 bg-[#B87FD9] mx-auto md:mx-0"></div>
+              <div className="h-1 w-20 bg-[#38BDF8] mx-auto md:mx-0"></div>
             </div>
 
             {/* Сетка скелетонов */}
@@ -269,9 +281,9 @@ export default function VdokhnovenieApp() {
                   layoutId={`review-${idx}`}
                   onClick={() => setSelectedReview(idx)}
                   whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                  className="bg-[#180E1C] border border-[#3A1F45] hover:border-[#B87FD9]/50 p-6 rounded-xl cursor-pointer shadow-lg transition-colors group relative overflow-hidden"
+                  className="bg-[#0A1526] border border-[#1E3A5F] hover:border-[#38BDF8]/50 p-6 rounded-xl cursor-pointer shadow-lg transition-colors group relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#B87FD9]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#38BDF8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   
                   {/* Заглушка: Шапка */}
                   <div className="flex items-center gap-4 mb-4">
@@ -299,33 +311,33 @@ export default function VdokhnovenieApp() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">Связь с нами</h2>
-              <div className="h-1 w-20 bg-[#B87FD9] mx-auto"></div>
+              <div className="h-1 w-20 bg-[#38BDF8] mx-auto"></div>
             </div>
 
             {/* Сетка контактов (3 колонки для десктопа) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               
               {/* 1. Кликабельный Телефон (открывает набор номера) */}
-              <a href="tel:+79213244708" className="bg-[#110A14] border border-[#3A1F45] p-8 rounded-xl flex flex-col justify-center items-center text-center group hover:border-[#B87FD9] transition-all cursor-pointer">
-                <div className="w-12 h-12 rounded-full bg-[#B87FD9]/10 flex items-center justify-center text-[#B87FD9] mb-4 group-hover:scale-110 group-hover:bg-[#B87FD9]/20 transition-all">
+              <a href="tel:+79213244708" className="bg-[#07101E] border border-[#1E3A5F] p-8 rounded-xl flex flex-col justify-center items-center text-center group hover:border-[#38BDF8] transition-all cursor-pointer">
+                <div className="w-12 h-12 rounded-full bg-[#38BDF8]/10 flex items-center justify-center text-[#38BDF8] mb-4 group-hover:scale-110 group-hover:bg-[#38BDF8]/20 transition-all">
                   <WhatsAppIcon />
                 </div>
                 <h4 className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">Телефон для заказов</h4>
-                <div className="text-xl md:text-2xl font-black text-white group-hover:text-[#B87FD9] transition-colors whitespace-nowrap">+7 921 324 47 08</div>
+                <div className="text-xl md:text-2xl font-black text-white group-hover:text-[#38BDF8] transition-colors whitespace-nowrap">+7 921 324 47 08</div>
               </a>
 
               {/* 2. Кликабельный Telegram (открывает приложение) */}
-              <a href="https://t.me/NataliyaParamonova" target="_blank" rel="noopener noreferrer" className="bg-[#110A14] border border-[#3A1F45] p-8 rounded-xl flex flex-col justify-center items-center text-center group hover:border-[#B87FD9] transition-all cursor-pointer">
-                <div className="w-12 h-12 rounded-full bg-[#B87FD9]/10 flex items-center justify-center text-[#B87FD9] mb-4 group-hover:scale-110 group-hover:bg-[#B87FD9]/20 transition-all">
+              <a href="https://t.me/NataliyaParamonova" target="_blank" rel="noopener noreferrer" className="bg-[#07101E] border border-[#1E3A5F] p-8 rounded-xl flex flex-col justify-center items-center text-center group hover:border-[#38BDF8] transition-all cursor-pointer">
+                <div className="w-12 h-12 rounded-full bg-[#38BDF8]/10 flex items-center justify-center text-[#38BDF8] mb-4 group-hover:scale-110 group-hover:bg-[#38BDF8]/20 transition-all">
                   <TelegramIcon />
                 </div>
                 <h4 className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">Написать в Telegram</h4>
-                <div className="text-lg font-bold text-white group-hover:text-[#B87FD9] transition-colors">@NataliyaParamonova</div>
+                <div className="text-lg font-bold text-white group-hover:text-[#38BDF8] transition-colors">@NataliyaParamonova</div>
               </a>
 
               {/* 3. Время работы */}
-              <div className="bg-[#110A14] border border-[#3A1F45] p-8 rounded-xl flex flex-col justify-center items-center text-center group hover:border-[#B87FD9]/50 transition-colors md:col-span-2 lg:col-span-1">
-                <div className="w-12 h-12 rounded-full bg-[#B87FD9]/10 flex items-center justify-center text-[#B87FD9] mb-4 group-hover:scale-110 transition-transform">
+              <div className="bg-[#07101E] border border-[#1E3A5F] p-8 rounded-xl flex flex-col justify-center items-center text-center group hover:border-[#38BDF8]/50 transition-colors md:col-span-2 lg:col-span-1">
+                <div className="w-12 h-12 rounded-full bg-[#38BDF8]/10 flex items-center justify-center text-[#38BDF8] mb-4 group-hover:scale-110 transition-transform">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <h4 className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">Время работы</h4>
@@ -334,7 +346,7 @@ export default function VdokhnovenieApp() {
               </div>
 
               {/* 4. Реквизиты (Растягиваем на всю ширину) */}
-              <div className="bg-[#110A14] border border-[#3A1F45] p-8 rounded-xl flex flex-col justify-center items-center text-center md:col-span-2 lg:col-span-3 group hover:border-[#B87FD9]/50 transition-colors">
+              <div className="bg-[#07101E] border border-[#1E3A5F] p-8 rounded-xl flex flex-col justify-center items-center text-center md:col-span-2 lg:col-span-3 group hover:border-[#38BDF8]/50 transition-colors">
                  <div className="text-lg font-bold text-white uppercase tracking-widest mb-4">ООО «ВДОХНОВЕНИЕ»</div>
                  <div className="text-sm text-zinc-400 font-light leading-relaxed max-w-2xl">
                     Россия, 192289, Санкт-Петербург, ул. Олеко Дундича, д.40, кв 41<br/>
@@ -350,7 +362,7 @@ export default function VdokhnovenieApp() {
       </main>
 
       {/* === ФУТЕР (Точная копия стиля WhiTeam) === */}
-      <footer className="border-t border-[#3A1F45]/50 bg-[#09040A] py-8 text-center relative z-10">
+      <footer className="border-t border-[#1E3A5F]/50 bg-[#02060F] py-8 text-center relative z-10">
          <p className="text-zinc-600 font-mono text-xs uppercase tracking-widest">
            Created by <span className="text-white font-bold">WhiTeam</span>
          </p>
@@ -368,7 +380,7 @@ export default function VdokhnovenieApp() {
             <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 pointer-events-none">
               <motion.div 
                 layoutId={`review-${selectedReview}`}
-                className="w-full max-w-2xl bg-[#180E1C] border border-[#3A1F45] p-8 md:p-12 rounded-2xl shadow-2xl pointer-events-auto relative"
+                className="w-full max-w-2xl bg-[#0A1526] border border-[#1E3A5F] p-8 md:p-12 rounded-2xl shadow-2xl pointer-events-auto relative"
               >
                 {/* Крестик закрытия */}
                 <button 
@@ -395,7 +407,7 @@ export default function VdokhnovenieApp() {
                   <div className="w-1/2 h-3 bg-zinc-800 rounded-full"></div>
                 </div>
                 
-                <div className="mt-10 pt-6 border-t border-[#3A1F45] text-center text-xs text-[#B87FD9] font-mono uppercase tracking-widest">
+                <div className="mt-10 pt-6 border-t border-[#1E3A5F] text-center text-xs text-[#38BDF8] font-mono uppercase tracking-widest">
                   // Здесь будет реальный текст отзыва клиента
                 </div>
               </motion.div>
