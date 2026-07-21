@@ -383,13 +383,30 @@ export default function VdokhnovenieApp() {
       </main>
 
       <footer className={`border-t py-10 text-center relative z-10 transition-colors duration-500 ${theme.footerBg} ${theme.border}`}>
-         <div className="flex flex-col gap-3 items-center justify-center">
+         <div className="flex flex-col gap-4 items-center justify-center">
            <p className={`text-[10px] sm:text-xs uppercase tracking-widest font-medium transition-colors ${theme.textMuted}`}>
              © 2023 Вдохновение. Все права защищены.
            </p>
-           <p className="font-mono text-xs uppercase tracking-widest">
-             Created by <span className={`font-bold transition-colors ${theme.textMain}`}>WhiTeam</span>
-           </p>
+           
+           {/* Фирменный интерактивный блок WhiTeam */}
+           <a 
+             href="#" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             className={`group flex items-center gap-2 font-mono text-xs uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 ${theme.textMuted} hover:text-white`}
+           >
+             <span>Created by</span>
+             
+             {/* === МЕСТО ПОД ТВОЮ ИКОНКУ === */}
+             <div className="w-5 h-5 flex items-center justify-center transition-colors duration-300 group-hover:text-[#38BDF8]">
+               {/* Временная фигура. Сюда мы вставим твой SVG */}
+               <div className="w-3 h-3 bg-current rounded-sm rotate-45"></div>
+             </div>
+             
+             <span className="font-bold transition-colors duration-300 group-hover:text-[#38BDF8]">
+               WhiTeam
+             </span>
+           </a>
          </div>
       </footer>
 
