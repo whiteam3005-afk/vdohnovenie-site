@@ -107,6 +107,12 @@ const menuData = {
       { name: "Кейк-попсы (картошка) / Печенье", price: "от 150 ₽/шт" },
       { name: "Подарки для гостей (печеньки с глазурью)", price: "от 250 ₽/шт" }
     ]}
+  ],
+
+  exclusive: [
+    { category: "Эксклюзив", items: [
+      { name: "Протеиновые трюфели", price: "150 ₽/шт" }
+    ]}
   ]
 };
 
@@ -126,7 +132,8 @@ export default function VdokhnovenieApp() {
     { id: 'catering', label: 'Кейтеринг' },
     { id: 'pastry', label: 'Выпечка' },
     { id: 'cakes', label: 'Торты' },
-    { id: 'desserts', label: 'Десерты' }
+    { id: 'desserts', label: 'Десерты' },
+    { id: 'exclusive', label: 'Только у нас' } // <-- Добавили новую вкладку
   ];
 
   const dummyReviews = Array(8).fill(null);
@@ -201,7 +208,7 @@ export default function VdokhnovenieApp() {
             </button>
 
             <div className={`hidden md:flex gap-4 ${theme.textMuted}`}>
-              <a href="https://t.me/NataliyaParamonova" target="_blank" rel="noopener noreferrer" className={`transition-all hover:scale-110 ${theme.accentHover}`}><TelegramIcon /></a>
+              <a href="https://t.me/Marina_Sharm" target="_blank" rel="noopener noreferrer" className={`transition-all hover:scale-110 ${theme.accentHover}`}><TelegramIcon /></a>
               <a href="#" className={`transition-all hover:scale-110 ${theme.accentHover}`}><WhatsAppIcon /></a>
             </div>
           </div>
@@ -211,7 +218,7 @@ export default function VdokhnovenieApp() {
       <main className="pt-32 pb-20 relative z-10">
         
         {/* О НАС */}
-        <section id="about" className="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center text-center">
+        <section id="about" className="max-w-6xl mx-auto px-6 pt-8 pb-16 md:pt-12 md:pb-24 flex flex-col items-center text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-3xl">
             <div className={`inline-block px-3 py-1 border text-xs font-mono mb-8 uppercase tracking-widest rounded-full transition-colors ${theme.pillBg}`}>
               Искусство вкуса
@@ -221,7 +228,7 @@ export default function VdokhnovenieApp() {
               <span className={theme.accent}>вашего праздника</span>
             </h1>
             <p className="text-lg leading-relaxed font-light">
-              Мы - компания «Вдохновение». Занимаемся организацией мероприятий под ключ, премиальным кейтерингом и созданием эксклюзивных десертов. От классических тортов до фитнес-линейки и брутальных мясных шедевров. Если вы не нашли свой идеальный вкус — мы разработаем рецепт специально для вас.
+              Мы - компания «Вдохновение». Занимаемся организацией мероприятий под ключ, премиальным кейтерингом и созданием эксклюзивных десертов. От классических тортов до фитнес-линейки и брутальных мясных шедевров. Если вы не нашли свой идеальный вкус - мы разработаем рецепт специально для вас.
             </p>
           </motion.div>
         </section>
@@ -328,7 +335,7 @@ export default function VdokhnovenieApp() {
         </section>
 
         {/* КОНТАКТЫ */}
-        <section id="contacts" className="max-w-6xl mx-auto px-6 py-20 pb-32">
+          <section id="contacts" className="max-w-6xl mx-auto px-6 pt-20 pb-12">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <div className="text-center mb-12">
               <h2 className={`text-3xl md:text-4xl font-black uppercase tracking-tight mb-2 transition-colors ${theme.textMain}`}>Связь с нами</h2>
@@ -375,10 +382,15 @@ export default function VdokhnovenieApp() {
 
       </main>
 
-      <footer className={`border-t py-8 text-center relative z-10 transition-colors duration-500 ${theme.footerBg} ${theme.border}`}>
-         <p className="font-mono text-xs uppercase tracking-widest">
-           Created by <span className={`font-bold transition-colors ${theme.textMain}`}>WhiTeam</span>
-         </p>
+      <footer className={`border-t py-10 text-center relative z-10 transition-colors duration-500 ${theme.footerBg} ${theme.border}`}>
+         <div className="flex flex-col gap-3 items-center justify-center">
+           <p className={`text-[10px] sm:text-xs uppercase tracking-widest font-medium transition-colors ${theme.textMuted}`}>
+             © 2023 Вдохновение. Все права защищены.
+           </p>
+           <p className="font-mono text-xs uppercase tracking-widest">
+             Created by <span className={`font-bold transition-colors ${theme.textMain}`}>WhiTeam</span>
+           </p>
+         </div>
       </footer>
 
       {/* МОДАЛЬНОЕ ОКНО */}
