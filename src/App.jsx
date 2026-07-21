@@ -163,8 +163,19 @@ export default function VdokhnovenieApp() {
     <div className={`min-h-screen ${theme.bg} ${theme.textMuted} font-sans selection:${theme.accentBg} selection:text-white overflow-x-hidden transition-colors duration-500`}>
       
       {/* ФОНОВЫЕ СФЕРЫ (Адаптируются под тему) */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.04] bg-[linear-gradient(to_right,#888_1px,transparent_1px),linear-gradient(to_bottom,#888_1px,transparent_1px)] bg-[size:32px_32px] z-0"></div>
-      
+{/* ПЕРЕЛИВАЮЩАЯСЯ СЕТКА (Квадратики) */}
+      <motion.div 
+        animate={{ 
+          opacity: [0.02, 0.08, 0.02], 
+          backgroundPosition: ["0px 0px", "32px 32px"] 
+        }} 
+        transition={{ 
+          opacity: { duration: 7, repeat: Infinity, ease: "easeInOut" },
+          backgroundPosition: { duration: 15, repeat: Infinity, ease: "linear" }
+        }}
+        className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#888_1px,transparent_1px),linear-gradient(to_bottom,#888_1px,transparent_1px)] bg-[size:32px_32px] z-0"
+      />
+            
       <motion.div 
         animate={{ scale: [1, 1.1, 1], x: [0, 40, 0], y: [0, -30, 0] }} 
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
