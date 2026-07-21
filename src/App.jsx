@@ -343,7 +343,7 @@ export default function VdokhnovenieApp() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <a href="tel:+79213244708" className={`p-8 rounded-xl flex flex-col justify-center items-center text-center group transition-all duration-300 cursor-pointer border ${theme.cardBg} ${theme.border} ${isLightMode ? 'hover:border-sky-300' : 'hover:border-[#38BDF8]'}`}>
+              <a href="tel:+89117025050" className={`p-8 rounded-xl flex flex-col justify-center items-center text-center group transition-all duration-300 cursor-pointer border ${theme.cardBg} ${theme.border} ${isLightMode ? 'hover:border-sky-300' : 'hover:border-[#38BDF8]'}`}>
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-all ${isLightMode ? 'bg-sky-100 text-sky-600 group-hover:bg-sky-200' : 'bg-[#38BDF8]/10 text-[#38BDF8] group-hover:bg-[#38BDF8]/20'}`}>
                   <WhatsAppIcon />
                 </div>
@@ -351,7 +351,7 @@ export default function VdokhnovenieApp() {
                 <div className={`text-xl md:text-2xl font-black transition-colors whitespace-nowrap ${theme.textMain} ${theme.accentHover}`}>+7 921 324 47 08</div>
               </a>
 
-              <a href="https://t.me/NataliyaParamonova" target="_blank" rel="noopener noreferrer" className={`p-8 rounded-xl flex flex-col justify-center items-center text-center group transition-all duration-300 cursor-pointer border ${theme.cardBg} ${theme.border} ${isLightMode ? 'hover:border-sky-300' : 'hover:border-[#38BDF8]'}`}>
+              <a href="https://t.me/businesslos" target="_blank" rel="noopener noreferrer" className={`p-8 rounded-xl flex flex-col justify-center items-center text-center group transition-all duration-300 cursor-pointer border ${theme.cardBg} ${theme.border} ${isLightMode ? 'hover:border-sky-300' : 'hover:border-[#38BDF8]'}`}>
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-all ${isLightMode ? 'bg-sky-100 text-sky-600 group-hover:bg-sky-200' : 'bg-[#38BDF8]/10 text-[#38BDF8] group-hover:bg-[#38BDF8]/20'}`}>
                   <TelegramIcon />
                 </div>
