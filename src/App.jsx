@@ -382,30 +382,22 @@ export default function VdokhnovenieApp() {
 
       </main>
 
-      <footer className={`border-t py-10 text-center relative z-10 transition-colors duration-500 ${theme.footerBg} ${theme.border}`}>
-         <div className="flex flex-col gap-4 items-center justify-center">
+      <footer className={`border-t py-12 text-center relative z-10 transition-colors duration-500 ${theme.footerBg} ${theme.border}`}>
+         <div className="flex flex-col gap-6 items-center justify-center">
            <p className={`text-[10px] sm:text-xs uppercase tracking-widest font-medium transition-colors ${theme.textMuted}`}>
              © 2023 Вдохновение. Все права защищены.
            </p>
            
-           {/* Фирменный интерактивный блок WhiTeam */}
+           {/* Оригинальная фирменная кнопка WhiTeam */}
            <a 
              href="#" 
              target="_blank" 
              rel="noopener noreferrer"
-             className={`group flex items-center gap-2 font-mono text-xs uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 ${theme.textMuted} hover:text-white`}
+             className="inline-flex items-center px-5 py-2.5 rounded-full border border-white/5 bg-[#0A0A0A] hover:bg-[#141414] hover:border-[#B87FD9]/30 transition-all duration-300 hover:-translate-y-1 shadow-xl"
            >
-             <span>Created by</span>
-             
-             {/* === МЕСТО ПОД ТВОЮ ИКОНКУ === */}
-             <div className="w-5 h-5 flex items-center justify-center transition-colors duration-300 group-hover:text-[#38BDF8]">
-               {/* Временная фигура. Сюда мы вставим твой SVG */}
-               <div className="w-3 h-3 bg-current rounded-sm rotate-45"></div>
-             </div>
-             
-             <span className="font-bold transition-colors duration-300 group-hover:text-[#38BDF8]">
-               WhiTeam
-             </span>
+             <span className="text-zinc-400 text-sm font-medium mr-1.5 tracking-wide">Created by</span>
+             <span className="text-white text-sm font-bold tracking-wide">Whi</span>
+             <span className="text-[#A855F7] text-sm font-bold tracking-wide">Team</span>
            </a>
          </div>
       </footer>
