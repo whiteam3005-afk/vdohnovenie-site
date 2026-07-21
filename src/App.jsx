@@ -388,16 +388,16 @@ export default function VdokhnovenieApp() {
              © 2023 Вдохновение. Все права защищены.
            </p>
            
-           {/* Оригинальная фирменная кнопка WhiTeam */}
+           {/* Точный код кнопки WhiTeam */}
            <a 
-             href="#" 
+             href="https://whiteam.online/" 
              target="_blank" 
              rel="noopener noreferrer"
-             className="inline-flex items-center px-5 py-2.5 rounded-full border border-white/5 bg-[#0A0A0A] hover:bg-[#141414] hover:border-[#B87FD9]/30 transition-all duration-300 hover:-translate-y-1 shadow-xl"
+             className="select-none px-5 py-2 border border-[#27272A] rounded-xl bg-[#121214] flex items-center shadow-md hover:border-purple-500/50 hover:bg-[#18181B] hover:-translate-y-1 transition-all duration-[190ms] ease-out group mt-2 sm:mt-0"
            >
-             <span className="text-zinc-400 text-sm font-medium mr-1.5 tracking-wide">Created by</span>
-             <span className="text-white text-sm font-bold tracking-wide">Whi</span>
-             <span className="text-[#A855F7] text-sm font-bold tracking-wide">Team</span>
+             <span className="text-[11px] md:text-xs font-medium tracking-wide text-[#A1A1AA] group-hover:text-[#FAFAFA] transition-colors">
+               Created by <span className="text-[#FAFAFA] font-semibold">Whi</span><span className="text-purple-500 font-semibold">Team</span>
+             </span>
            </a>
          </div>
       </footer>
