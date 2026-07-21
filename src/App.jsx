@@ -348,7 +348,7 @@ export default function VdokhnovenieApp() {
                   <WhatsAppIcon />
                 </div>
                 <h4 className="text-xs font-mono uppercase tracking-widest mb-2">Телефон для заказов</h4>
-                <div className={`text-xl md:text-2xl font-black transition-colors whitespace-nowrap ${theme.textMain} ${theme.accentHover}`}>+7 921 324 47 08</div>
+                <div className={`text-xl md:text-2xl font-black transition-colors whitespace-nowrap ${theme.textMain} ${theme.accentHover}`}>+8 911 702 50 50</div>
               </a>
 
               <a href="https://t.me/businesslos" target="_blank" rel="noopener noreferrer" className={`p-8 rounded-xl flex flex-col justify-center items-center text-center group transition-all duration-300 cursor-pointer border ${theme.cardBg} ${theme.border} ${isLightMode ? 'hover:border-sky-300' : 'hover:border-[#38BDF8]'}`}>
@@ -356,7 +356,7 @@ export default function VdokhnovenieApp() {
                   <TelegramIcon />
                 </div>
                 <h4 className="text-xs font-mono uppercase tracking-widest mb-2">Написать в Telegram</h4>
-                <div className={`text-lg font-bold transition-colors ${theme.textMain} ${theme.accentHover}`}>@NataliyaParamonova</div>
+                <div className={`text-lg font-bold transition-colors ${theme.textMain} ${theme.accentHover}`}>@businesslos</div>
               </a>
 
               <div className={`p-8 rounded-xl flex flex-col justify-center items-center text-center md:col-span-2 lg:col-span-1 transition-colors duration-500 border ${theme.cardBg} ${theme.border}`}>
